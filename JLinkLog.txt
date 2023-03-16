@@ -1,0 +1,115 @@
+T5190 000:203.956   SEGGER J-Link V7.22b Log File
+T5190 000:204.062   DLL Compiled: Jun 17 2021 17:22:49
+T5190 000:204.074   Logging started @ 2023-03-16 15:29
+T5190 000:204.086 - 204.092ms
+T5190 000:204.103 JLINK_SetWarnOutHandler(...)
+T5190 000:204.116 - 0.019ms
+T5190 000:204.129 JLINK_OpenEx(...)
+T5190 000:205.862   Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+T5190 000:206.385   Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+T5190 000:209.492   Hardware: V7.00
+T5190 000:209.517   S/N: 20090928
+T5190 000:209.535   OEM: SEGGER
+T5190 000:209.553   Feature(s): RDI,FlashDL,FlashBP,JFlash,GDBFull
+T5190 000:211.638   TELNET listener socket opened on port 19021
+T5190 000:211.706   WEBSRV Starting webserver
+T5190 000:211.826   WEBSRV Webserver running on local port 19080
+T5190 000:211.845 - 7.722ms returns "O.K."
+T5190 000:211.865 JLINK_GetEmuCaps()
+T5190 000:211.877 - 0.018ms returns 0x88EA5833
+T5190 000:211.893 JLINK_TIF_GetAvailable(...)
+T5190 000:212.214 - 0.329ms
+T5190 000:212.232 JLINK_SetErrorOutHandler(...)
+T5190 000:212.244 - 0.018ms
+T5190 000:212.275 JLINK_ExecCommand("ProjectFile = "D:\workspace_work\ra\HMI-Board\project\JLinkSettings.ini"", ...). 
+T5190 000:220.166 - 7.906ms returns 0x00
+T5190 000:220.198 JLINK_ExecCommand("Device = R7FA6M3AH", ...). 
+T5190 000:224.435   Device "R7FA6M3AH" selected.
+T5190 000:224.739 - 4.535ms returns 0x00
+T5190 000:224.762 JLINK_GetHardwareVersion()
+T5190 000:224.775 - 0.019ms returns 70000
+T5190 000:224.788 JLINK_GetDLLVersion()
+T5190 000:224.800 - 0.018ms returns 72202
+T5190 000:224.813 JLINK_GetOEMString(...)
+T5190 000:224.826 JLINK_GetFirmwareString(...)
+T5190 000:224.840 - 0.020ms
+T5190 000:224.856 JLINK_GetDLLVersion()
+T5190 000:224.868 - 0.017ms returns 72202
+T5190 000:224.880 JLINK_GetCompileDateTime()
+T5190 000:224.892 - 0.017ms
+T5190 000:224.907 JLINK_GetFirmwareString(...)
+T5190 000:224.919 - 0.018ms
+T5190 000:224.932 JLINK_GetHardwareVersion()
+T5190 000:224.944 - 0.017ms returns 70000
+T5190 000:224.957 JLINK_GetSN()
+T5190 000:224.969 - 0.018ms returns 20090928
+T5190 000:224.983 JLINK_GetOEMString(...)
+T5190 000:225.002 JLINK_TIF_Select(JLINKARM_TIF_SWD)
+T5190 000:226.081 - 1.087ms returns 0x00
+T5190 000:226.098 JLINK_HasError()
+T5190 000:226.121 JLINK_SetSpeed(5000)
+T5190 000:226.455 - 0.341ms
+T5190 000:226.659 JLINK_HasError()
+T5190 000:226.682 JLINK_SetResetType(JLINKARM_RESET_TYPE_NORMAL)
+T5190 000:226.695 - 0.018ms returns JLINKARM_RESET_TYPE_NORMAL
+T5190 000:226.708 JLINK_Reset()
+T5190 000:429.611   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 000:735.654   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 001:042.339   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 001:347.674   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 001:654.911   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 001:965.859   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 002:269.326   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 002:573.422   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 002:676.556   
+  ***** Error: 
+T5190 002:676.599   SC32 (connect): Cannot connect to CPU.
+T5190 002:978.406   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 003:239.739   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 003:545.416   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 003:850.764   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 003:954.087   
+  ***** Error: 
+T5190 003:954.149   SC32 (connect): Cannot connect to CPU.
+T5190 004:054.929 - 3828.247ms
+T5190 004:056.194 JLINK_GetId()
+T5190 004:259.773   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 004:565.155   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 004:870.103   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 004:973.559   
+  ***** Error: 
+T5190 004:973.597   SC32 (connect): Cannot connect to CPU.
+T5190 005:275.399   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 005:538.949   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 005:843.578   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 006:148.568   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 006:252.004   
+  ***** Error: 
+T5190 006:252.046   SC32 (connect): Cannot connect to CPU.
+T5190 006:353.525 - 2297.351ms returns 0x00000000
+T5190 006:353.598 JLINK_GetId()
+T5190 006:558.421   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 006:863.797   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 007:168.701   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 007:273.329   
+  ***** Error: 
+T5190 007:273.412   SC32 (connect): Cannot connect to CPU.
+T5190 007:575.437   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 007:837.826   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 008:143.579   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 008:447.700   RESET (pin 15) high, but should be low. Please check target hardware.
+T5190 008:551.298   
+  ***** Error: 
+T5190 008:551.339   SC32 (connect): Cannot connect to CPU.
+T5190 008:652.343 - 2298.771ms returns 0x00000000
+T5190 008:659.967 JLINK_GetFirmwareString(...)
+T5190 008:659.992 - 0.030ms
+T4690 009:632.434 Looking for J-Link GUI Server exe at: D:\softwoare\tools_work\mdk\Keil_v5\ARM\Segger\JLinkGUIServer.exe
+T4690 009:632.532 Looking for J-Link GUI Server exe at: \JLinkGUIServer.exe
+T4690 009:933.916 Failed to connect to J-Link GUI Server.
+T61A8 023:797.889   
+  ***** Error: Connection to emulator lost!
+T5190 772:338.655 JLINK_Close()
+T5190 772:353.035 - 14.405ms
+T5190 772:353.067   
+T5190 772:353.080   Closed
