@@ -36,8 +36,20 @@ uint16_t *lcd_current_working_buffer = (uint16_t *)&fb_background[0];
 
 void turn_on_lcd_backlight(void)
 {
-    rt_pin_mode(LCD_BL_PIN, PIN_MODE_OUTPUT);   /* LCD_BL */
-    rt_pin_write(LCD_BL_PIN, PIN_HIGH);
+    rt_pin_mode(BSP_IO_PORT_10_PIN_00, PIN_MODE_OUTPUT);   /* LCD_BL */
+    rt_pin_write(BSP_IO_PORT_10_PIN_00, PIN_HIGH);
+
+    rt_pin_mode(BSP_IO_PORT_10_PIN_05, PIN_MODE_OUTPUT);   /* LCD_BL */
+    rt_pin_write(BSP_IO_PORT_10_PIN_05, PIN_HIGH);
+    
+    rt_kprintf("-----------\n");
+}
+
+rt_weak void _ra_port_display_callback(display_callback_args_t *p_args)
+{
+    if (DISPLAY_EVENT_LINE_DETECTION == p_args->event)
+    {
+    }
 }
 
 void ra_bsp_lcd_init(void)

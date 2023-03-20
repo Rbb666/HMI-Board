@@ -57,6 +57,7 @@
         <file category="source" name="ra/board/ra6m3/board_leds.c"/>
         <file category="header" name="ra/board/ra6m3/board_leds.h" path=""/>
         <file category="header" name="ra/fsp/inc/api/bsp_api.h" path=""/>
+        <file category="header" name="ra/fsp/inc/api/r_display_api.h" path=""/>
         <file category="header" name="ra/fsp/inc/api/r_elc_api.h" path=""/>
         <file category="header" name="ra/fsp/inc/api/r_ioport_api.h" path=""/>
         <file category="header" name="ra/fsp/inc/api/r_sdmmc_api.h" path=""/>
@@ -117,6 +118,7 @@
         <file category="header" name="ra/fsp/src/bsp/mcu/ra6m3/bsp_feature.h" path=""/>
         <file category="header" name="ra/fsp/src/bsp/mcu/ra6m3/bsp_mcu_info.h" path=""/>
         <file category="source" name="ra/fsp/src/r_dmac/r_dmac.c"/>
+        <file category="source" name="ra/fsp/src/r_glcdc/r_glcdc.c"/>
         <file category="source" name="ra/fsp/src/r_ioport/r_ioport.c"/>
         <file category="other" name="ra/fsp/src/r_ioport/r_ioport.o"/>
         <file category="source" name="ra/fsp/src/r_sci_uart/r_sci_uart.c"/>
@@ -137,6 +139,7 @@
         <file category="header" name="ra_cfg/fsp_cfg/bsp/bsp_mcu_family_cfg.h" path=""/>
         <file category="header" name="ra_cfg/fsp_cfg/bsp/bsp_pin_cfg.h" path=""/>
         <file category="header" name="ra_cfg/fsp_cfg/r_dmac_cfg.h" path=""/>
+        <file category="header" name="ra_cfg/fsp_cfg/r_glcdc_cfg.h" path=""/>
         <file category="header" name="ra_cfg/fsp_cfg/r_ioport_cfg.h" path=""/>
         <file category="header" name="ra_cfg/fsp_cfg/r_sci_uart_cfg.h" path=""/>
         <file category="header" name="ra_cfg/fsp_cfg/r_sdhi_cfg.h" path=""/>

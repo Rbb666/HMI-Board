@@ -11,6 +11,7 @@
             [4] = sdhimmc_accs_isr, /* SDHIMMC1 ACCS (Card access) */
             [5] = sdhimmc_card_isr, /* SDHIMMC1 CARD (Card detect) */
             [6] = dmac_int_isr, /* DMAC0 INT (DMAC transfer end 0) */
+            [7] = glcdc_line_detect_isr, /* GLCDC LINE DETECT (Specified line) */
         };
         const bsp_interrupt_event_t g_interrupt_event_link_select[BSP_ICU_VECTOR_MAX_ENTRIES] =
         {
@@ -21,5 +22,6 @@
             [4] = BSP_PRV_IELS_ENUM(EVENT_SDHIMMC1_ACCS), /* SDHIMMC1 ACCS (Card access) */
             [5] = BSP_PRV_IELS_ENUM(EVENT_SDHIMMC1_CARD), /* SDHIMMC1 CARD (Card detect) */
             [6] = BSP_PRV_IELS_ENUM(EVENT_DMAC0_INT), /* DMAC0 INT (DMAC transfer end 0) */
+            [7] = BSP_PRV_IELS_ENUM(EVENT_GLCDC_LINE_DETECT), /* GLCDC LINE DETECT (Specified line) */
         };
         #endif

@@ -169,6 +169,9 @@
 /* u8g2: a monochrome graphic library */
 
 
+/* PainterEngine: A cross-platform graphics application framework written in C language */
+
+
 /* tools packages */
 
 
@@ -188,19 +191,11 @@
 
 /* peripheral libraries and drivers */
 
-/* sensors drivers */
-
-
-/* touch drivers */
-
 
 /* Kendryte SDK */
 
 
 /* AI packages */
-
-
-/* Signal Processing and Control Algorithm Packages */
 
 
 /* miscellaneous packages */
@@ -216,36 +211,16 @@
 /* Arduino libraries */
 
 
-/* Projects */
+/* Sensor libraries */
 
 
-/* Sensors */
+/* Display libraries */
 
 
-/* Display */
+/* Timing libraries */
 
 
-/* Timing */
-
-
-/* Data Processing */
-
-
-/* Data Storage */
-
-/* Communication */
-
-
-/* Device Control */
-
-
-/* Other */
-
-
-/* Signal IO */
-
-
-/* Uncategorized */
+/* Project libraries */
 
 #define SOC_FAMILY_RENESAS
 #define SOC_SERIES_R7FA6M3
@@ -267,6 +242,7 @@
 #define BSP_USING_SDCARD_FS
 #define BSP_USING_SDHI
 #define SDHI_USING_1_BIT
+#define BSP_USING_LCD
 
 /* Board extended module Drivers */
 
