@@ -1,4 +1,4 @@
-#Mon Mar 20 10:21:32 CST 2023
+#Mon Mar 20 11:08:14 CST 2023
 com.renesas.cdt.ddsc.packs.componentfiles/Renesas\#\#Common\#\#all\#\#fsp_common\#\#\#\#3.5.0/libraries=
 com.renesas.cdt.ddsc.packs.componentfiles/Renesas\#\#HAL\ Drivers\#\#all\#\#r_glcdc\#\#\#\#3.5.0/all=2697709197,ra/fsp/inc/instances/r_glcdc.h|2184024064,ra/fsp/inc/api/r_display_api.h|652452323,ra/fsp/src/r_glcdc/r_glcdc.c
 com.renesas.cdt.ddsc.packs.componentfiles/Renesas\#\#HAL\ Drivers\#\#all\#\#r_sdhi\#\#\#\#3.5.0/libraries=
@@ -13,7 +13,7 @@ com.renesas.cdt.ddsc.packs.componentfiles/Renesas\#\#HAL\ Drivers\#\#all\#\#r_gl
 com.renesas.cdt.ddsc.threads.configurator/collapse/module.driver.uart_on_sci_uart.552817864=false
 com.renesas.cdt.ddsc.packs.componentfiles/Renesas\#\#BSP\#\#ra6m3\#\#device\#\#R7FA6M3AH3CFB\#\#3.5.0/libraries=
 com.renesas.cdt.ddsc.packs.componentfiles/Renesas\#\#HAL\ Drivers\#\#all\#\#r_sci_uart\#\#\#\#3.5.0/libraries=
-com.renesas.cdt.ddsc.settingseditor/com.renesas.cdt.ddsc.settingseditor.active_page=PinConfiguration
+com.renesas.cdt.ddsc.settingseditor/com.renesas.cdt.ddsc.settingseditor.active_page=SWPConfigurator
 com.renesas.cdt.ddsc.packs.componentfiles/Renesas\#\#BSP\#\#ra6m3\#\#device\#\#\#\#3.5.0/all=2308894280,ra/fsp/src/bsp/cmsis/Device/RENESAS/Include/system.h
 com.renesas.cdt.ddsc.packs.componentfiles/Renesas\#\#HAL\ Drivers\#\#all\#\#r_ioport\#\#\#\#3.5.0/all=2208590403,ra/fsp/inc/instances/r_ioport.h|3254285722,ra/fsp/src/r_ioport/r_ioport.c|1939984091,ra/fsp/inc/api/r_ioport_api.h
 com.renesas.cdt.ddsc.packs.componentfiles/Renesas\#\#BSP\#\#ra6m3\#\#device\#\#\#\#3.5.0/libraries=

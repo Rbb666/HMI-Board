@@ -302,7 +302,7 @@
       <property id="module.driver.display.output.data_enable_polarity" value="module.driver.display.output.data_enable_polarity.signal_polarity_hiactive"/>
       <property id="module.driver.display.output.sync_edge" value="module.driver.display.output.sync_edge.signal_sync_edge_rising"/>
       <property id="module.driver.display.output.format" value="module.driver.display.output.format.out_format_16bits_rgb565"/>
-      <property id="module.driver.display.output.color_order" value="module.driver.display.output.color_order.color_order_rgb"/>
+      <property id="module.driver.display.output.color_order" value="module.driver.display.output.color_order.color_order_bgr"/>
       <property id="module.driver.display.output.endian" value="module.driver.display.output.endian.endian_little"/>
       <property id="module.driver.display.output.bg_color.byte.a" value="255"/>
       <property id="module.driver.display.output.bg_color.byte.r" value="0"/>
@@ -488,8 +488,6 @@
       <configSetting altId="glcdc0.lcd_tcon1.p103" configurationId="glcdc0.lcd_tcon1"/>
       <configSetting altId="glcdc0.lcd_tcon2.p104" configurationId="glcdc0.lcd_tcon2"/>
       <configSetting altId="glcdc0.mode.rgb565.free" configurationId="glcdc0.mode"/>
-      <configSetting altId="p100.output.high" configurationId="p100"/>
-      <configSetting altId="p100.gpio_mode.gpio_mode_out.high" configurationId="p100.gpio_mode"/>
       <configSetting altId="p101.glcdc0.lcd_clk" configurationId="p101"/>
       <configSetting altId="p101.gpio_speed.gpio_speed_high" configurationId="p101.gpio_drivecapacity"/>
       <configSetting altId="p101.gpio_mode.gpio_mode_peripheral" configurationId="p101.gpio_mode"/>

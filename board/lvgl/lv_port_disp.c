@@ -33,18 +33,6 @@ static struct rt_device_graphic_info info;
 // 0x1FFE0000    0x20040000
 __attribute__((section(".ARM.__at_0x1FFE0000"))) lv_color_t buf_1[COLOR_BUFFER];
 
-#if !DLG_LVGL_USE_GPU_RA6M3
-void _ra_port_display_callback(display_callback_args_t * p_args)
-{
-    /* enter interrupt */
-    rt_interrupt_enter();
-
-    /* TODO */
-
-    /* leave interrupt */
-    rt_interrupt_leave();
-}
-
 static void color_to16_maybe(lv_color16_t *dst, lv_color_t *src)
 {
 #if (LV_COLOR_DEPTH == 16)
@@ -55,7 +43,6 @@ static void color_to16_maybe(lv_color16_t *dst, lv_color_t *src)
     dst->ch.red = src->ch.red;
 #endif
 }
-#endif
 
 static void disp_flush(lv_disp_drv_t *disp_drv, const lv_area_t *area, lv_color_t *color_p)
 {

@@ -206,7 +206,7 @@
                 },
                 .format              = DISPLAY_OUT_FORMAT_16BITS_RGB565,
                 .endian              = DISPLAY_ENDIAN_LITTLE,
-                .color_order         = DISPLAY_COLOR_ORDER_RGB,
+                .color_order         = DISPLAY_COLOR_ORDER_BGR,
                 .data_enable_polarity = DISPLAY_SIGNAL_POLARITY_HIACTIVE,
                 .sync_edge           = DISPLAY_SIGNAL_SYNC_EDGE_RISING,
                 .bg_color =
