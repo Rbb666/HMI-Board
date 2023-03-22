@@ -73,6 +73,7 @@ static int lvgl_thread_init(void)
 
     return 0;
 }
-INIT_ENV_EXPORT(lvgl_thread_init);
+//INIT_ENV_EXPORT(lvgl_thread_init);
+MSH_CMD_EXPORT(lvgl_thread_init, lvgl_thread_init)
 
 #endif /*__RTTHREAD__*/

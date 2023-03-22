@@ -62,6 +62,14 @@ menu "Hardware Drivers Config"
                 config BSP_USING_SPI1
                     bool "Enable SPI1 BUS"
                     default n
+
+                config BSP_USING_SCI_SPI0
+                    bool "Enable SCI SPI0 BUS"
+                    default n
+
+                config BSP_USING_SCI_SPI6
+                    bool "Enable SCI SPI6 BUS"
+                    default n
             endif
 
         menuconfig BSP_USING_FS
@@ -71,6 +79,13 @@ menu "Hardware Drivers Config"
                 config BSP_USING_SDCARD_FS
                     bool "Enable SDCARD filesystem"
                     select BSP_USING_SDHI
+                    select RT_USING_DFS_ELMFAT
+                    default n
+                config BSP_USING_SPICARD_FS
+                    bool "Enable SPI FLASH filesystem"
+                    select BSP_USING_SPI
+                    select BSP_USING_SCI_SPI6
+                    select RT_USING_SPI_MSD
                     select RT_USING_DFS_ELMFAT
                     default n
             endif
@@ -108,6 +123,14 @@ menu "Hardware Drivers Config"
             select BSP_USING_GPIO
             select BSP_USING_SPI
             select BSP_USING_SPI0
+            default n
+
+        config BSP_USING_G2D
+            bool "Enable G2D"
+            default n
+
+        config BSP_USING_JPEG
+            bool "Enable JPEG"
             default n
 
         menuconfig BSP_USING_LVGL

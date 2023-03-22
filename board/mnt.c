@@ -4,17 +4,13 @@
 #ifdef BSP_USING_FS
 
 #include <dfs_fs.h>
-#include <drv_sdhi.h>
 
 #define DBG_TAG "app.filesystem"
 #define DBG_LVL DBG_INFO
 #include <rtdbg.h>
 
 #ifdef BSP_USING_SDCARD_FS
-
-/* SD Card hot plug detection pin */
-//#define SD_CHECK_PIN BSP_IO_PORT_05_PIN_06
-
+#include <drv_sdhi.h>
 static void _sdcard_mount(void)
 {
     rt_device_t device;
@@ -42,17 +38,6 @@ static void _sdcard_mount(void)
     }
 }
 
-static void _sdcard_unmount(void)
-{
-    rt_thread_mdelay(200);
-    dfs_unmount("/");
-    LOG_I("Unmount \"/\"");
-
-    mmcsd_wait_cd_changed(0);
-    sdcard_change();
-    mmcsd_wait_cd_changed(RT_WAITING_FOREVER);
-}
-
 static void sd_mount(void)
 {
     rt_thread_mdelay(200);
@@ -60,14 +45,26 @@ static void sd_mount(void)
 	_sdcard_mount();
 }
 
+#else
+#include <spi_msd.h>
+#include "drv_sci_spi.h"
+int sd_mount(void)
+{
+    uint32_t cs_pin = BSP_IO_PORT_03_PIN_07;
+    rt_hw_spi_device_attach("scpi6", "scpi60", cs_pin, RT_NULL);
+    msd_init("sd0", "scpi60");
+    if (dfs_mount("sd0", "/", "elm", 0, 0) == 0)
+    {
+        rt_kprintf("Mount \"/dev/sd0\" on \"/\"\n");
+    }
+    return 0;
+}
 #endif /* BSP_USING_SDCARD_FS */
 
 int mount_init(void)
 {
-#ifdef BSP_USING_SDCARD_FS
     sd_mount();
-#endif
     return RT_EOK;
 }
-INIT_APP_EXPORT(mount_init);
+INIT_ENV_EXPORT(mount_init);
 #endif

@@ -103,13 +103,8 @@
 #define RT_USING_SERIAL_V2
 #define RT_SERIAL_USING_DMA
 #define RT_USING_PIN
-#define RT_USING_SDIO
-#define RT_SDIO_STACK_SIZE 512
-#define RT_SDIO_THREAD_PRIORITY 15
-#define RT_MMCSD_STACK_SIZE 1024
-#define RT_MMCSD_THREAD_PREORITY 22
-#define RT_MMCSD_MAX_PARTITION 16
-#define RT_SDIO_DEBUG
+#define RT_USING_SPI
+#define RT_USING_SPI_MSD
 
 /* Using USB */
 
@@ -120,7 +115,6 @@
 
 /* POSIX (Portable Operating System Interface) layer */
 
-#define RT_USING_POSIX_DEVIO
 
 /* Interprocess Communication (IPC) */
 
@@ -245,11 +239,13 @@
 #define BSP_USING_UART4
 #define BSP_UART4_RX_BUFSIZE 256
 #define BSP_UART4_TX_BUFSIZE 0
+#define BSP_USING_SPI
+#define BSP_USING_SCI_SPI6
 #define BSP_USING_FS
-#define BSP_USING_SDCARD_FS
-#define BSP_USING_SDHI
-#define SDHI_USING_1_BIT
+#define BSP_USING_SPICARD_FS
 #define BSP_USING_LCD
+#define BSP_USING_G2D
+#define BSP_USING_JPEG
 #define BSP_USING_LVGL
 #define BSP_USING_LCD_RGB
 #define BSP_USING_LVGL_DEMO

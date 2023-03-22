@@ -12,6 +12,14 @@
             [5] = sdhimmc_card_isr, /* SDHIMMC1 CARD (Card detect) */
             [6] = dmac_int_isr, /* DMAC0 INT (DMAC transfer end 0) */
             [7] = glcdc_line_detect_isr, /* GLCDC LINE DETECT (Specified line) */
+            [8] = drw_int_isr, /* DRW INT (Display list interrupt) */
+            [9] = jpeg_jedi_isr, /* JPEG JEDI (Compression/decompression process interrupt) */
+            [10] = jpeg_jdti_isr, /* JPEG JDTI (Data transfer interrupt) */
+            [11] = gpt_counter_overflow_isr, /* GPT2 COUNTER OVERFLOW (Overflow) */
+            [12] = sci_spi_rxi_isr, /* SCI6 RXI (Received data full) */
+            [13] = sci_spi_txi_isr, /* SCI6 TXI (Transmit data empty) */
+            [14] = sci_spi_tei_isr, /* SCI6 TEI (Transmit end) */
+            [15] = sci_spi_eri_isr, /* SCI6 ERI (Receive error) */
         };
         const bsp_interrupt_event_t g_interrupt_event_link_select[BSP_ICU_VECTOR_MAX_ENTRIES] =
         {
@@ -23,5 +31,13 @@
             [5] = BSP_PRV_IELS_ENUM(EVENT_SDHIMMC1_CARD), /* SDHIMMC1 CARD (Card detect) */
             [6] = BSP_PRV_IELS_ENUM(EVENT_DMAC0_INT), /* DMAC0 INT (DMAC transfer end 0) */
             [7] = BSP_PRV_IELS_ENUM(EVENT_GLCDC_LINE_DETECT), /* GLCDC LINE DETECT (Specified line) */
+            [8] = BSP_PRV_IELS_ENUM(EVENT_DRW_INT), /* DRW INT (Display list interrupt) */
+            [9] = BSP_PRV_IELS_ENUM(EVENT_JPEG_JEDI), /* JPEG JEDI (Compression/decompression process interrupt) */
+            [10] = BSP_PRV_IELS_ENUM(EVENT_JPEG_JDTI), /* JPEG JDTI (Data transfer interrupt) */
+            [11] = BSP_PRV_IELS_ENUM(EVENT_GPT2_COUNTER_OVERFLOW), /* GPT2 COUNTER OVERFLOW (Overflow) */
+            [12] = BSP_PRV_IELS_ENUM(EVENT_SCI6_RXI), /* SCI6 RXI (Received data full) */
+            [13] = BSP_PRV_IELS_ENUM(EVENT_SCI6_TXI), /* SCI6 TXI (Transmit data empty) */
+            [14] = BSP_PRV_IELS_ENUM(EVENT_SCI6_TEI), /* SCI6 TEI (Transmit end) */
+            [15] = BSP_PRV_IELS_ENUM(EVENT_SCI6_ERI), /* SCI6 ERI (Receive error) */
         };
         #endif
