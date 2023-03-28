@@ -24,7 +24,6 @@
 #define T_auds _REV(0x30317762)
 
 extern AVI_TypeDef AVI_file;
-extern rt_sem_t _SemaphoreVideo;
 
 static uint32_t _REV(uint32_t value)
 {
@@ -67,7 +66,7 @@ static void audio_init(void)
     
     // set default volume
     // volume:-16 -- +16
-    pwm_audio_set_volume(-15);
+    pwm_audio_set_volume(0);
 }
 
 int audio_volume_set(int argc, const char *argv[])
@@ -90,12 +89,11 @@ void video_entry(void *paramer)
     uint32_t Strsize;
     uint32_t Strtype;
     uint8_t *pbuffer;
-    uint32_t buffer_size = 40 * 1024;
+    uint32_t buffer_size = 35 * 1024;
     uint32_t alltime;
-//    uint32_t cur_time;
 
     int fd = -1;
-    fd = open(paramer, O_WRONLY | O_CREAT);
+    fd = open(paramer, O_WRONLY);
 
     pbuffer = rt_malloc(buffer_size);
     if (pbuffer == NULL)
@@ -104,6 +102,7 @@ void video_entry(void *paramer)
         close(fd);
         return;
     }
+    rt_memset(pbuffer, 0x00, buffer_size);
     
     BytesRD = read(fd, pbuffer, 20480);    
     ret = AVI_Parser(pbuffer, BytesRD);
@@ -132,9 +131,6 @@ void video_entry(void *paramer)
     Strsize = read_frame(fd, pbuffer, buffer_size, &Strtype);
     BytesRD = Strsize + 8;
 
-    static uint32_t last_frame = 0;
-    last_frame = rt_tick_get();
-
     rt_kprintf("\npbuffer addr:0x%#x\n", pbuffer);
 
     while (1)
@@ -149,7 +145,7 @@ void video_entry(void *paramer)
             extern int JPEG_X_Draw(void *p, int x0, int y0);
             JPEG_X_Draw(pbuffer, 0, 0);
         }
-        else if (Strtype == T_auds)   //音频输出
+        else if (Strtype == T_auds)
         {
             size_t cnt;
             pwm_audio_write((uint8_t *)pbuffer, Strsize, &cnt, 500);
@@ -161,11 +157,10 @@ void video_entry(void *paramer)
         }
 
         Strsize = read_frame(fd, pbuffer, buffer_size, &Strtype); // 读入整帧
-
-        // rt_kprintf("type=%x, size=%d\n", Strtype, Strsize);
         BytesRD += Strsize + 8;
     }
 EXIT:
+    pwm_audio_deinit();
     rt_free(pbuffer);
     close(fd);
 }
@@ -181,7 +176,7 @@ int avi_player_init(int argc, const char *argv[])
     rt_thread_t tid = rt_thread_create("avi_td",
                                        video_entry,
                                        (char *)argv[1],
-                                       1 * 1024,
+                                       2 * 1024,
                                        18, 10);
     if (tid)
         rt_thread_startup(tid);

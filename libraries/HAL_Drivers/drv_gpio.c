@@ -25,7 +25,7 @@
 
 static rt_base_t ra_pin_get_irqx(rt_uint32_t pin)
 {
-    PIN2IRQX_TABLE(pin)
+    PIN2IRQX_TABLE(pin);
 }
 
 static struct rt_pin_irq_hdr pin_irq_hdr_tab[RA_IRQ_MAX] = {0};
@@ -340,7 +340,7 @@ int rt_hw_pin_init(void)
 }
 
 #ifdef R_ICU_H
-void irq_callback(external_irq_callback_args_t *p_args)
+void irq10_callback(external_irq_callback_args_t *p_args)
 {
     rt_interrupt_enter();
     if (p_args->channel == pin_irq_hdr_tab[p_args->channel].pin)

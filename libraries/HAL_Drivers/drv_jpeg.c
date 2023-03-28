@@ -17,7 +17,7 @@
 
 #define DCODE_BUFFER_SIZE           (30 * 1024)
 #define JPEG_NUMBYTES_OUTBUFFER     (DCODE_BUFFER_SIZE)
-#define JPEG_TIMEOUT                (100)
+#define JPEG_TIMEOUT                (200)
 
 volatile static jpeg_status_t g_jpeg_status = JPEG_STATUS_NONE;
 

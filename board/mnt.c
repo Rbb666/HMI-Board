@@ -47,15 +47,19 @@ static void sd_mount(void)
 
 #else
 #include <spi_msd.h>
-#include "drv_sci_spi.h"
+#include "drv_spi.h"
 int sd_mount(void)
 {
-    uint32_t cs_pin = BSP_IO_PORT_03_PIN_07;
-    rt_hw_spi_device_attach("scpi6", "scpi60", cs_pin, RT_NULL);
-    msd_init("sd0", "scpi60");
+    uint32_t cs_pin = BSP_IO_PORT_06_PIN_11;
+    rt_hw_spi_device_attach("scpi7", "scpi70", cs_pin, RT_NULL);
+    msd_init("sd0", "scpi70");
     if (dfs_mount("sd0", "/", "elm", 0, 0) == 0)
     {
-        rt_kprintf("Mount \"/dev/sd0\" on \"/\"\n");
+        LOG_I("Mount \"/dev/sd0\" on \"/\"\n");
+    }
+    else
+    {
+        LOG_W("sd card mount to '/' failed!");
     }
     return 0;
 }

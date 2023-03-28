@@ -80,15 +80,19 @@ static struct ra_sci_spi_handle spi_handle[] =
 };
 
 static struct ra_sci_spi spi_config[sizeof(spi_handle) / sizeof(spi_handle[0])] = {0};
-#define SCI_SPIx_CALLBACK(n)        \
-void sci_spi##n##_callback(spi_callback_args_t *p_args) \
-{ \
-    rt_interrupt_enter(); \
-    if (SPI_EVENT_TRANSFER_COMPLETE == p_args->event) \
-    { \
-        rt_event_send(&complete_event, RA_SCI_SPI##n##_EVENT); \
-    } \
-    rt_interrupt_leave(); \
+#define SCI_SPIx_CALLBACK(n)                                        \
+void sci_spi##n##_callback(spi_callback_args_t *p_args)             \
+{                                                                   \
+    rt_interrupt_enter();                                           \
+    if (SPI_EVENT_TRANSFER_COMPLETE == p_args->event)               \
+    {                                                               \
+        rt_event_send(&complete_event, RA_SCI_SPI##n##_EVENT);      \
+    }                                                               \
+    else if (SPI_EVENT_TRANSFER_ABORTED == p_args->event)           \
+    {                                                               \
+        rt_kprintf("spi tran fail\n");                              \
+    }                                                               \
+    rt_interrupt_leave();                                           \
 }
 
 SCI_SPIx_CALLBACK(0);
@@ -332,7 +336,7 @@ INIT_BOARD_EXPORT(ra_hw_sci_spi_init);
 /**
   * Attach the spi device to SPI bus, this function must be used after initialization.
   */
-rt_err_t rt_hw_spi_device_attach(const char *bus_name, const char *device_name, rt_base_t cs_pin, void *user_data)
+rt_err_t rt_hw_sci_spi_device_attach(const char *bus_name, const char *device_name, rt_base_t cs_pin, void *user_data)
 {
     RT_ASSERT(bus_name != RT_NULL);
     RT_ASSERT(device_name != RT_NULL);
@@ -349,8 +353,6 @@ rt_err_t rt_hw_spi_device_attach(const char *bus_name, const char *device_name, 
     {
         LOG_E("%s attach to %s faild, %d\n", device_name, bus_name, result);
     }
-
-    RT_ASSERT(result == RT_EOK);
 
     LOG_D("%s attach to %s done", device_name, bus_name);
 

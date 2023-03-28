@@ -648,7 +648,6 @@ rt_err_t pwm_audio_stop(void)
     /**< timer disable interrupt */
     int level = rt_hw_interrupt_disable();
     //
-//    R_GPT_Stop(handle->pwm_timer_ctrl);
     R_GPT_Stop(handle->gen_timer_ctrl);
     //
     rt_hw_interrupt_enable(level);
